@@ -1,0 +1,25 @@
+machine:
+  services:
+    - docker
+  environment:
+    DOCKER_EMAIL: deploy@blikk.co
+    DOCKER_USER: blikkdeploy
+    LOG_NAME: url-metadata-extractor
+    VERSION: 0.1.0
+
+dependencies:
+  pre:
+    - pip install newspaper
+    - docker login -e $DOCKER_EMAIL  -u $DOCKER_USER -p $DOCKER_PASSWORD
+
+test:
+  post:
+    - docker build -t blikk/url-metadata-extractor .
+    - docker tag blikk/url-metadata-extractor:latest blikk/url-metadata-extractor:$CIRCLE_SHA1
+    - docker tag blikk/url-metadata-extractor:latest blikk/url-metadata-extractor:$VERSION
+
+deployment:
+  hub:
+    branch: master
+    commands:
+      - docker push blikk/url-metadata-extractor
