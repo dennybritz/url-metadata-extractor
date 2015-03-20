@@ -1,0 +1,19 @@
+{
+  "name": "url-metadata-extractor",
+  "version": "0.1.0",
+  "description": "An API that extracts metadata from a given article URL. Uses the Python newspaper library.",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/blikkhq/url-metadata-extractor"
+  },
+  "author": "Denny Britz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blikkhq/url-metadata-extractor/issues"
+  },
+  "homepage": "https://github.com/blikkhq/url-metadata-extractor"
+}
