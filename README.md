@@ -9,9 +9,9 @@ docker run -d -p 3333:80 blikk/url-metadata-extractor
 ## Usage
 
 ```shell
-curl -XPOST http://192.168.59.103:1337/extract \
+curl -XPOST http://localhost:3333/extract \
   --header "Content-Type:application/json" \
-  --data '{"url": "http://fox13/new-year-new-laws-obamacare-pot-guns-and-drones/"}'
+  --data '{"url": "http://fox13now.com/2013/12/30/new-year-new-laws-obamacare-pot-guns-and-drones"}'
 ```
 
 ## Build yourself
