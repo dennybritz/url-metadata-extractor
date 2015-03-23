@@ -11,20 +11,20 @@ args = parser.parse_args()
 
 article = Article(args.url)
 
-if not article.is_valid_url():
-  print json.dumps({
-    'error': 'Not a valid url.'
-  })
-  exit(1)
+# if not article.is_valid_url():
+#   print json.dumps({
+#     'error': 'Not a valid url.'
+#   })
+#   exit(1)
 
 article.download()
 article.parse()
 
-if not article.is_valid_body():
-  print json.dumps({
-    'error': 'Not a valid article body.'
-  })
-  exit(1)
+# if not article.is_valid_body():
+#   print json.dumps({
+#     'error': 'Not a valid article body.'
+#   })
+#   exit(1)
 
 article.nlp()
 
