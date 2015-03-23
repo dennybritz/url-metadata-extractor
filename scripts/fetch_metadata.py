@@ -28,12 +28,14 @@ article.parse()
 
 article.nlp()
 
+
+
 print json.dumps({
   'authors': article.authors,
   'keywords': article.keywords,
   'metadata': article.meta_data,
   'metaDescription': article.meta_description,
-  'publishDate': article.publish_date.isoformat(),
+  'publishDate': (article.publish_date.isoformat() if article.publish_date else None),
   'tags': list(article.tags),
   'text': article.text,
   'title': article.title,
