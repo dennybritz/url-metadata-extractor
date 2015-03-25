@@ -24,7 +24,7 @@ describe('The metadata extractor', function(){
         expect(result.contentType).to.eql('article');
         expect(result.site).to.eql('TechCrunch');
         // TODO: How to get the author?
-        expect(result.author).to.be.null;
+        expect(result.author).to.be.undefined;
       });
   });
 
@@ -40,8 +40,8 @@ describe('The metadata extractor', function(){
         expect(result.contentType).to.eql('video');
         expect(result.site).to.eql('YouTube');
         // TODO: Get author and date
-        expect(result.author).to.be.null;
-        expect(result.date).to.be.null;
+        expect(result.author).to.be.undefined;
+        expect(result.date).to.be.undefined;
       });
   });
 
@@ -58,7 +58,7 @@ describe('The metadata extractor', function(){
         expect(result.site).to.eql('Mashable');
         expect(result.date).to.eql('2015-03-20T01:46:37+00:00');
         // TODO: Get author
-        expect(result.author).to.be.null;
+        expect(result.author).to.be.undefined;
       });
   });
 
@@ -74,8 +74,8 @@ describe('The metadata extractor', function(){
         expect(result.contentType).to.eql('kickstarter:project');
         expect(result.site).to.eql('Kickstarter');
         // TODO: Get author
-        expect(result.author).to.be.null;
-        expect(result.date).to.be.null;
+        expect(result.author).to.be.undefined;
+        expect(result.date).to.be.undefined;
       });
   });
 

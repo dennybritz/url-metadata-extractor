@@ -1,6 +1,6 @@
 {
   "name": "url-metadata-extractor",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "API that extracts metadata from a given article URL. Uses the Python newspaper library.",
   "main": "app.js",
   "scripts": {
