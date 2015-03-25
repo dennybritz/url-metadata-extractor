@@ -3,10 +3,12 @@
 var app = require('../app');
 var expect = require('chai').expect;
 var agent = require('supertest-as-promised');
+var nock = require('nock');
 
 describe('The API', function(){
   
   this.timeout(5000);
+  nock.enableNetConnect();
 
   it('should work for a valid URL', function(){
     return agent(app)

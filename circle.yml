@@ -5,12 +5,10 @@ machine:
     DOCKER_EMAIL: deploy@blikk.co
     DOCKER_USER: blikkdeploy
     LOG_NAME: url-metadata-extractor
-    VERSION: 0.1.2
+    VERSION: 0.2.0
 
 dependencies:
   pre:
-    - sudo pip install newspaper
-    - sudo python -m nltk.downloader 'punkt'
     - docker login -e $DOCKER_EMAIL  -u $DOCKER_USER -p $DOCKER_PASSWORD
 
 test:

@@ -14,6 +14,7 @@ router.post('/extract', function(req, res) {
   }
 
   log.info({url: req.body.url}, 'processing request');
+  
   extractor.extractAsync(req.body.url).then(function(result){
     res.send(result);
   }).catch(function(err){
