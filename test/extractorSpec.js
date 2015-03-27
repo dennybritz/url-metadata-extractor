@@ -16,7 +16,7 @@ describe('The metadata extractor', function(){
     return extractor
       .extractAsync('http://techcrunch.com/')
       .then(function(result){
-        expect(result.url).to.eql('http://social.techcrunch.com/2015/01/06/razer-announces-199-open-source-virtual-reality-headset/');
+        expect(result.url).to.eql('http://techcrunch.com/2015/01/06/razer-announces-199-open-source-virtual-reality-headset/');
         expect(result.title).to.eql('Razer Announces $199 ‘Open Source’ Virtual Reality Headset');
         expect(result.description).to.eql('The headset, which the company says will arrive this June, is meant to serve as an alternative hardware test bed for developers looking at the VR space.');
         expect(result.image).to.eql('https://tctechcrunch2011.files.wordpress.com/2015/01/img_0023.png?w=680');
