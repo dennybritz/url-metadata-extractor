@@ -79,6 +79,24 @@ describe('The metadata extractor', function(){
       });
   });
 
+  it('should extract the date from a arstechnica.com article', function(){
+    nock('http://arstechnica.com').get('/').replyWithFile(200, 'test/htmls/arstechnica.html');
+    return extractor
+      .extractAsync('http://arstechnica.com/')
+      .then(function(result){
+        expect(result.date).to.eql('2015-02-13T16:01:00+00:00');
+      });
+  });
+
+  it('should extract the date from a wired.com article', function(){
+    nock('http://wired.com').get('/').replyWithFile(200, 'test/htmls/wired.html');
+    return extractor
+      .extractAsync('http://wired.com/')
+      .then(function(result){
+        expect(result.date).to.eql('2014-03-27T00:00:00+00:00');
+      });
+  });  
+
   it('should fail for an inaccessible URL', function(){
     return expect(extractor
       .extractAsync('http://iamnotarealwebsite.io'))

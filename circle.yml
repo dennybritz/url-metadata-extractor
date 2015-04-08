@@ -5,7 +5,7 @@ machine:
     DOCKER_EMAIL: deploy@blikk.co
     DOCKER_USER: blikkdeploy
     LOG_NAME: url-metadata-extractor
-    VERSION: 0.2.5
+    VERSION: 0.2.6
 
 dependencies:
   pre:

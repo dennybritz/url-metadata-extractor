@@ -1,4 +1,4 @@
-FROM dockerfile/nodejs
+FROM node:0.12
 
 COPY . /app
 
