@@ -95,6 +95,24 @@ describe('The metadata extractor', function(){
       .then(function(result){
         expect(result.date).to.eql('2014-03-27T00:00:00+00:00');
       });
+  });
+
+  it('should extract the date from a cnet.com article', function(){
+    nock('http://cnet.com').get('/').replyWithFile(200, 'test/htmls/cnet.html');
+    return extractor
+      .extractAsync('http://cnet.com/')
+      .then(function(result){
+        expect(result.date).to.eql('2015-04-08T21:01:00+00:00');
+      });
+  });
+
+  it('should extract the date from a dailymail.co.uk article', function(){
+    nock('http://dailymail.co.uk').get('/').replyWithFile(200, 'test/htmls/dailymail.html');
+    return extractor
+      .extractAsync('http://dailymail.co.uk/')
+      .then(function(result){
+        expect(result.date).to.eql('2015-04-08T18:32:00+00:00');
+      });
   });  
 
   it('should fail for an inaccessible URL', function(){
